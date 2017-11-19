@@ -19,15 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RcE-LW-7gE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="526"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xG1-Gb-6t1">
+                                <rect key="frame" x="8" y="576" width="359" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonWasTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ia-oW-RBe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xG1-Gb-6t1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="0R1-V8-kOq"/>
                             <constraint firstItem="RcE-LW-7gE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H55-hD-q2M"/>
-                            <constraint firstItem="RcE-LW-7gE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HfS-PX-nUB"/>
                             <constraint firstItem="RcE-LW-7gE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JYT-vm-xcA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xG1-Gb-6t1" secondAttribute="bottom" constant="61" id="Lst-Pc-h6c"/>
+                            <constraint firstItem="xG1-Gb-6t1" firstAttribute="top" secondItem="RcE-LW-7gE" secondAttribute="bottom" constant="50" id="RdK-Q2-UBW"/>
                             <constraint firstItem="RcE-LW-7gE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ueM-Ux-15g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xG1-Gb-6t1" secondAttribute="trailing" constant="8" id="xle-Ri-EzV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

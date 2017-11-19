@@ -10,6 +10,9 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *appleImageView;
+@property (strong, nonatomic) NSArray<NSURL *> *iPhoneImages;
+@property (assign, nonatomic) NSInteger randomIndex;
+@property (strong, nonatomic) NSURL *urlIndex;
 
 @end
 
@@ -17,8 +20,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // creates a new NSURL object with the string of the image to be downloaded
-    NSURL *url = [NSURL URLWithString:@"https://i.imgur.com/2vQtZBb.png"];
+    
+    NSURL *urlOne = [NSURL URLWithString:@"http://imgur.com/bktnImE.png"];
+    NSURL *urlTwo = [NSURL URLWithString:@"http://imgur.com/zdwdenZ.png"];
+    NSURL *urlThree = [NSURL URLWithString:@"http://imgur.com/CoQ8aNl.png"];
+    NSURL *urlFour = [NSURL URLWithString:@"http://imgur.com/2vQtZBb.png"];
+    NSURL *urlFive = [NSURL URLWithString:@"http://imgur.com/y9MIaCS.png"];
+    
+    self.iPhoneImages = @[urlOne,urlTwo,urlThree,urlFour,urlFive];
+}
+    
+- (IBAction)buttonWasTapped:(UIButton *)sender {
+    // creates a new NSURL object with the string of the image to be downloaded (taken from the array)
+    self.randomIndex = arc4random() % [self.iPhoneImages count];
+    self.urlIndex = self.iPhoneImages[self.randomIndex];
+    NSURL *url = self.urlIndex;
     // defines the behavior and policies to use when making a request with an NSURLSession object (using default in this case)
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     // creates a NSURLSession object using the session configuration
